@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Alejandra Díaz",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 9.6,
+      "left": 4.84,
+      "attrs": { "distance": "150" }
+    },
+    {
+      "type": "chip-gps-neo-6m",
+      "id": "chip1",
+      "top": 29.82,
+      "left": -139.2,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -132.9,
+      "left": -32.9,
+      "attrs": { "distance": "2" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic1:GND", "esp:GND.2", "purple", [ "h46.8", "v76.8" ] ],
+    [ "ultrasonic1:VCC", "esp:5V", "red", [ "h-48", "v249.6" ] ],
+    [ "chip1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "chip1:GND", "esp:GND.1", "purple", [ "v-20.42", "h58.58", "v192" ] ],
+    [ "chip1:IN", "esp:17", "cyan", [ "v163.79", "h221.78", "v-124.8" ] ],
+    [ "chip1:OUT", "esp:16", "yellow", [ "v154.19", "h192.98", "v-105.6" ] ],
+    [ "ultrasonic1:TRIG", "esp:5", "black", [ "v19.2", "h86", "v144" ] ],
+    [ "ultrasonic1:ECHO", "esp:18", "black", [ "v9.6", "h85.6", "v144" ] ]
+  ],
+  "dependencies": {}
+}

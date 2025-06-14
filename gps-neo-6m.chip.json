@@ -1,0 +1,11 @@
+{
+  "name": "gps-neo-6m",
+  "author": "WasteTrack",
+  "pins": [
+    "VCC",
+    "GND",
+    "IN",
+    "OUT"
+  ],
+  "controls": []
+}
